@@ -1,0 +1,19 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /proposals/{proposalId} {
+      allow read: if true;
+      allow create, update: if request.auth != null;
+      match /comments/{commentId} {
+        allow read: if true;
+        allow create: if request.auth != null && request.resource.data.uid == request.auth.uid;
+        allow update, delete: if request.auth != null && resource.data.uid == request.auth.uid;
+      }
+    }
+    match /pendingProposals/{proposalId} {
+      allow create: if request.auth != null && request.resource.data.uid == request.auth.uid;
+      allow read: if request.auth != null;
+      allow update, delete: if false;
+    }
+  }
+}
