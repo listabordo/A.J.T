@@ -4,16 +4,16 @@ import { getFirestore, collection, addDoc, doc, getDoc, setDoc, updateDoc, onSna
 import { firebaseConfig, FIREBASE_ENABLED } from "./firebase-config.js";
 
 const baseProposals = [
-["01","Derechos","Actualizar y mejorar el Estatuto del Centro","Actualizar y mejorar el Estatuto del Centro para que todas y todos tengamos acceso al mismo y podamos conocer y hacer cumplir nuestros derechos."],
-["02","Participación","Eventos periódicos para el alumnado","Hacer eventos de manera periódica: torneos en entreturnos, actividades deportivas, ferias y otras propuestas, tanto dentro como fuera del colegio cuando sea posible."],
-["03","Escuela","Reacondicionar la escuela","Pintar aulas, marcos de puertas y ventanas y reacondicionar todo lo que sea posible utilizando el dinero recaudado."],
-["04","Participación","Intervenir en la Fiesta de Educación Física","Intervenir directamente en la Fiesta de Educación Física para hacerla más amena, dinámica y participativa."],
-["05","Escuela","Arreglar puertas de las aulas","Comprar y arreglar las manijas y trabas de las puertas de las aulas."],
-["06","Transparencia","Comunicar todo lo que hacemos","Comunicar de forma clara y constante las actividades, decisiones y resultados del Centro para ser 100% transparentes."],
-["07","Transparencia","Organización de actas, notas, ingresos y gastos","Organizar actas, notas, ingresos y gastos para evitar problemas y permitir el acceso a cualquier movimiento que se dé."],
-["08","Participación","Facilitar el contacto con el Centro","Hacer más fácil el contacto de todo el alumnado mediante página web, mail dedicado, Instagram, números de teléfono y presencia directa cuando se necesite."],
-["09","Cooperación","Cooperar con otros Centros de Estudiantes","Trabajar con otros CdEs para encontrar soluciones más rápido y lograr conquistas más grandes para nosotros y para otros estudiantes."],
-["10","Compromiso","Dejar la escuela mejor que como la encontramos","Dar todo de nosotros y aprovechar todo lo que podamos para dejar la escuela mejor que como la encontramos."]
+["01","Derechos","Actualizar y mejorar el Estatuto del Centro","Actualizar y mejorar el Estatuto del Centro para que todas y todos tengamos acceso al mismo y podamos conocer y hacer cumplir nuestros derechos."24],
+["02","Participación","Eventos periódicos para el alumnado","Hacer eventos de manera periódica: torneos en entreturnos, actividades deportivas, ferias y otras propuestas, tanto dentro como fuera del colegio cuando sea posible."57],
+["03","Escuela","Reacondicionar la escuela","Pintar aulas, marcos de puertas y ventanas y reacondicionar todo lo que sea posible utilizando el dinero recaudado."21],
+["04","Participación","Intervenir en la Fiesta de Educación Física","Intervenir directamente en la Fiesta de Educación Física para hacerla más amena, dinámica y participativa."69],
+["05","Escuela","Arreglar puertas de las aulas","Comprar y arreglar las manijas y trabas de las puertas de las aulas."45],
+["06","Transparencia","Comunicar todo lo que hacemos","Comunicar de forma clara y constante las actividades, decisiones y resultados del Centro para ser 100% transparentes."63],
+["07","Transparencia","Organización de actas, notas, ingresos y gastos","Organizar actas, notas, ingresos y gastos para evitar problemas y permitir el acceso a cualquier movimiento que se dé."30],
+["08","Participación","Facilitar el contacto con el Centro","Hacer más fácil el contacto de todo el alumnado mediante página web, mail dedicado, Instagram, números de teléfono y presencia directa cuando se necesite."20],
+["09","Cooperación","Cooperar con otros Centros de Estudiantes","Trabajar con otros CdEs para encontrar soluciones más rápido y lograr conquistas más grandes para nosotros y para otros estudiantes."17],
+["10","Compromiso","Dejar la escuela mejor que como la encontramos","Dar todo de nosotros y aprovechar todo lo que podamos para dejar la escuela mejor que como la encontramos."54]
 ];
 let proposals = baseProposals.map(x=>({id:"p"+x[0],num:x[0],cat:x[1],title:x[2],text:x[3],likes:0,comments:[]}));
 let user=null, db=null, auth=null;
