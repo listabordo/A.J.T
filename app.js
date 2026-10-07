@@ -1,6 +1,6 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
-import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
-import { getFirestore, collection, addDoc, doc, getDoc, setDoc, updateDoc, onSnapshot, query, orderBy, serverTimestamp, increment } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
+import { getFirestore, collection, addDoc, doc, getDoc, setDoc, updateDoc, onSnapshot, query, orderBy, serverTimestamp, increment } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js";
 import { firebaseConfig, FIREBASE_ENABLED } from "./firebase-config.js";
 
 const baseProposals = [
@@ -11,7 +11,7 @@ const baseProposals = [
 ["05","Escuela","Arreglar puertas de las aulas","Comprar y arreglar las manijas y trabas de las puertas de las aulas.", 45],
 ["06","Transparencia","Comunicar todo lo que hacemos","Comunicar de forma clara y constante las actividades, decisiones y resultados del Centro para ser 100% transparentes.", 63],
 ["07","Transparencia","Organización de actas, notas, ingresos y gastos","Organizar actas, notas, ingresos y gastos para evitar problemas y permitir el acceso a cualquier movimiento que se dé.", 30],
-["08","Participación","Facilitar el contacto con el Centro","Hacer más fácil el contacto de todo el alumnado mediante página web, mail dedicated, Instagram, números de teléfono y presencia directa cuando se necesite.", 20],
+["08","Participación","Facilitar el contacto con el Centro","Hacer más fácil el contacto de todo el alumnado mediante página web, mail dedicado, Instagram, números de teléfono y presencia directa cuando se necesite.", 20],
 ["09","Cooperación","Cooperar con otros Centros de Estudiantes","Trabajar con otros CdEs para encontrar soluciones más rápido y lograr conquistas más grandes para nosotros y para otros estudiantes.", 17],
 ["10","Compromiso","Dejar la escuela mejor que como la encontramos","Dar todo de nosotros y aprovechar todo lo que podamos para dejar la escuela mejor que como la encontramos.", 54]
 ];
