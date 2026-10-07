@@ -30,10 +30,7 @@ function render(){
  const q=$("#search").value.toLowerCase().trim(), cat=document.querySelector(".filter.active")?.dataset.cat\vert{}\vert{}"todas", sort=$("#sort").value;
  let arr=proposals.filter(p=>(cat==="todas"||p.cat.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"")===cat)&&(p.title+" "+p.text).toLowerCase().includes(q));
  if(sort==="likes")arr.sort((a,b)=>b.likes-a.likes); if(sort==="titulo")arr.sort((a,b)=>a.title.localeCompare(b.title));
- $("#proposalGrid").innerHTML=arr.map(p=>`<article class="proposal" data-id="${p.id}">
- <span class="num">${p.num} / ${p.cat}</span><h3>${esc(p.title)}</h3><p>${esc(p.text)}</p><span class="tag">${p.cat}</span>
- <div class="proposalFooter"><button class="actionBtn likeBtn ${localLikes[p.id]?"liked":""}" data-like="${p.id}">♥ <span>${p.likes}</span> Apoyar</button><button class="actionBtn commentBtn" data-comment="${p.id}">💬 <span>${p.comments.length}</span> Comentarios</button></div>
- <div class="comments" id="comments-${p.id}">${p.comments.length?p.comments.map(c=>`<div class="comment"><b>${esc(c.name||"Estudiante")}</b><small>${esc(c.type)} ·${esc(c.text)}</small></div>`).join(""):"<small>Aún no hay aportes. Sé la primera persona en participar.</small>"}</div></article>`).join("");
+ $("#proposalGrid").innerHTML=arr.map(p=>`<article class="proposal" data-id="${p.id}"><span class="num">${p.num} / ${p.cat}</span><h3>${esc(p.title)}</h3><p>${esc(p.text)}</p><span class="tag">${p.cat}</span><div class="proposalFooter"><button class="actionBtn likeBtn ${localLikes[p.id]?"liked":""}" data-like="${p.id}">♥ <span>${p.likes}</span> Apoyar</button><button class="actionBtn commentBtn" data-comment="${p.id}">💬 <span>${p.comments.length}</span> Comentarios</button></div><div class="comments" id="comments-${p.id}">${p.comments.length?p.comments.map(c=>`<div class="comment"><b>${esc(c.name||"Estudiante")}</b><small>${esc(c.type)} ·${esc(c.text)}</small></div>`).join(""):"<small>Aún no hay aportes. Sé la primera persona en participar.</small>"}</div></article>`).join("");
  $$(".likeBtn").forEach(b=>b.onclick=()=>requireLogin(()=>like(b.dataset.like)));  $$
 (".commentBtn").forEach(b=>b.onclick=()=>{const c=$("#comments-"+b.dataset.comment);c.classList.toggle("open"); if(c.classList.contains("open")) requireLogin(()=>{}); if(user) openComment(b.dataset.comment)});
 }
