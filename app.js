@@ -15,7 +15,7 @@ const baseProposals = [
 ["09","Cooperación","Cooperar con otros Centros de Estudiantes","Trabajar con otros CdEs para encontrar soluciones más rápido y lograr conquistas más grandes para nosotros y para otros estudiantes."],
 ["10","Compromiso","Dejar la escuela mejor que como la encontramos","Dar todo de nosotros y aprovechar todo lo que podamos para dejar la escuela mejor que como la encontramos."]
 ];
-let proposals = baseProposals.map(x=>({id:"p"+x[0],num:x[0],cat:x[1],title:x[2],text:x[3],likes:0,comments:[]}));
+let proposals = baseProposals.map(x=>({id:"p"+x[0],num:x[0],cat:x[1],title:x[2],text:x[3],likes:56,comments:[]}));
 let user=null, db=null, auth=null;
 let localLikes=JSON.parse(localStorage.getItem("ajtt_likes")||"{}");
 
